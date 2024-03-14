@@ -9,47 +9,31 @@
 </head>
 <body>
     <?php
-        $number = 12; // Integer
-        $num = 4.6; // float
-        $res = $number + $num;
-        $phrase = 'Переменная равна: ';
-        $bool = true;
-        echo $bool . '</br>';
-        echo $phrase . $res;
-
-        $res = $number - $num;
-        echo $res . '</br>';
-        $res = $number / $num;
-        echo $res . '</br>';
-        $res = $number * $num;
-        echo $res . '</br>';
-        $res = $number % (integer) $num . ' koo';
+    
+        $x = 45;
+        $arr_1 = array(0, 4, 5, 'Ghbdt', true, 7.6, $x);
+        var_dump($arr_1);
+        $arr_2 = [5,6];
+        echo $arr_1[0] . '</br>';
+        $arr_1[0] = 5;
+        echo $arr_1[0] . '</br>';
+        $arr_3 = array(array(4,3,647,),array('hj','okiju'));
+        echo $arr_3[1][1] . '</br>';
+        echo $arr_3[1][2] = 705;
+        echo '</br>';
         
-        $number +=5;
-        echo $number . '</br>';
-        $number -=5;
-        echo $number . '</br>';
-        $number /=5;
-        echo $number . '</br>';
-        $number *=5;
-        echo $number . '</br>';
-        $number %=5;
-        echo $number . '</br>';
-        $number++;
-        echo $number . '</br>';
+        $arr_4 = 
+        [
+            'short' => 'Dict',
+            'long' => 'Dictionary'
+        ];
+        $arr_4['short'] = 'foo';
+        echo $arr_4['short'];
+        echo '</br>';
         
-        echo PHP_VERSION . '</br>';
-        
-        var_dump(defined('PI')) . '</br>';
-        
-        define("PI", 3.14);
-        
-        echo PI . '</br>';
-        const OH_LULA = 80;
-        
-        echo OH_LULA . '</br>';
-        
-        echo defined('PI') . '</br>';
+        foreach($arr_4 as $key => $value) {
+            echo 'Ключ: ' . $key . ', Значение: ' . $value . '</br>';
+        }
     ?>
 </body>
 </html>
