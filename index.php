@@ -8,14 +8,48 @@
     <title>Document</title>
 </head>
 <body>
-    <?= 'Hello</br>' . 'roo</br>'?>
     <?php
-        echo " \\\"R:\"\\\"Hi\""
-        /*
-         * Многострочный коммент
-         */
-        # коммент 1 строчный
-        // коммент 1 строчный
+        $number = 12; // Integer
+        $num = 4.6; // float
+        $res = $number + $num;
+        $phrase = 'Переменная равна: ';
+        $bool = true;
+        echo $bool . '</br>';
+        echo $phrase . $res;
+
+        $res = $number - $num;
+        echo $res . '</br>';
+        $res = $number / $num;
+        echo $res . '</br>';
+        $res = $number * $num;
+        echo $res . '</br>';
+        $res = $number % (integer) $num . ' koo';
+        
+        $number +=5;
+        echo $number . '</br>';
+        $number -=5;
+        echo $number . '</br>';
+        $number /=5;
+        echo $number . '</br>';
+        $number *=5;
+        echo $number . '</br>';
+        $number %=5;
+        echo $number . '</br>';
+        $number++;
+        echo $number . '</br>';
+        
+        echo PHP_VERSION . '</br>';
+        
+        var_dump(defined('PI')) . '</br>';
+        
+        define("PI", 3.14);
+        
+        echo PI . '</br>';
+        const OH_LULA = 80;
+        
+        echo OH_LULA . '</br>';
+        
+        echo defined('PI') . '</br>';
     ?>
 </body>
 </html>
