@@ -1,17 +1,17 @@
 <?php
 
-class Person
+abstract class Person
 {
-    public $name = 'Alex';
-    public $age = '25';
-    public $job = 'Developer';
+    public string $name;
+    public int $age;
+    public string $job;
 
     /**
      * @param string $name
      * @param string $age
      * @param string $job
      */
-    public function __construct(string $name, string $age, string $job)
+    public function __construct(string $name, int $age, string $job)
     {
         $this->name = $name;
         $this->age = $age;
@@ -26,112 +26,47 @@ class Person
 
 class Developer extends Person
 {
+    public int $timePerWeek;
+    
+    public function __construct(string $name, int $age, string $job, int $timePerWeek)
+    {
+        parent::__construct($name, $age, $job);
+        $this->timePerWeek = $timePerWeek;
+    }
+
     public function work()
     {
         echo 'developer is working';
     }
 }
 
-class Director extends Person
+$developer = new Developer('Kenny', 20, 'developer', 20);
+
+echo $developer->timePerWeek;
+
+abstract class Building
 {
-    public function work()
-    {
-        echo 'director is working';
+    public string $name;
+    public int $floors;
+    public string $activity;
+    
+    public function __construct($name, $floors, $activity) {
+        $this->name = $name;
+        $this->floors = $floors;
+        $this->activity = $activity;
     }
 }
 
-class Manager extends Person
+class Factory extends Building
 {
-    public function work()
-    {
-        echo 'manager is working';
+    public string $color;
+    public function __construct(string $name, int $floors, string $activity, $color) {
+        $this->color = $color;
+        parent::__construct($name, $floors, $activity);
     }
 }
 
-class Doctor extends Person
-{
-    public function work()
-    {
-        echo 'doctor is working';
-    }
-}
+$factory = new Factory('The laying hen', 4, 'egg collection', 'red');
 
-class Teacher extends Person
-{
-    public function work()
-    {
-        echo 'Teacher is working';
-    }
-}
-
-class Engineer extends Person
-{
-    public function work()
-    {
-        echo 'Engineer is working';
-    }
-}
-
-class Lawyer extends Person
-{
-    public function work()
-    {
-        echo 'Lawyer is working';
-    }
-}
-
-class Programmer extends Person
-{
-    public function work()
-    {
-        echo 'Programmer is working';
-    }
-}
-
-class Artist extends Person
-{
-    public function work()
-    {
-        echo 'Artist is working';
-    }
-}
-
-class Nurse extends Person
-{
-    public function work()
-    {
-        echo 'Nurse is working';
-    }
-}
-
-class Chef extends Person
-{
-    public function work()
-    {
-        echo 'Chef is working';
-    }
-}
-
-class Architect extends Person
-{
-    public function work()
-    {
-        echo 'Architect is working';
-    }
-}
-
-class Writer extends Person
-{
-    public function work()
-    {
-        echo 'Writer is working';
-    }
-}
-
-$doctor = new Doctor('Artem', 34, 'doctor');
-$teacher = new Teacher('Alexey', 45, 'teacher');
-$engineer = new Engineer('Ilya', 28, 'engineer');
-
-echo $doctor->name . '</br>';
-echo $teacher->name . '</br>';
-echo $engineer->name . '</br>';
+echo '</br>';
+echo $factory->activity . '</br>';
