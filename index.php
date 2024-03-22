@@ -4,53 +4,134 @@ class Person
 {
     public $name = 'Alex';
     public $age = '25';
-    public $hobby = 'basketball'; 
-    public $isMarried = false;
-    
-    public function __construct($name, $age, $hobby, $isMarried)
-    {
-        echo 'CONSTRUCT</br>';
-        $this->name = $name;
-        $this->age = $age;
-        $this->hobby = $hobby;
-        $this->isMarried = $isMarried;
-    }
+    public $job = 'Developer';
 
-    public function setProperty($name, $age, $hobby, $isMarried): void
+    /**
+     * @param string $name
+     * @param string $age
+     * @param string $job
+     */
+    public function __construct(string $name, string $age, string $job)
     {
         $this->name = $name;
         $this->age = $age;
-        $this->hobby = $hobby;
-        $this->isMarried = $isMarried;
+        $this->job = $job;
     }
-}
 
-//$person = new Person();
-//$person->setProperty('GTX', 1070, 'Game', true);
-//
-//$person2 = new Person();
-//$person2->setProperty('Al', 47, 'work', true);
-
-$person = new Person('Genri', 3, 'riw', true);
-
-echo $person->name . '</br>';
-//echo $person2->name . '</br>';
-
-class Bistro {
-    public string $sushi;
-    public string $tempura;
-    public string $sauce;
-    public string $salad;
-    public string $drink;
-    
-    public function __construct($sushi, $tempura, $sauce, $salad, $drink)
+    public function sayHello()
     {
-        echo $this->sushi = $sushi . '</br>';
-        echo $this->tempura = $tempura . '</br>';
-        echo $this->sauce = $sauce . '</br>';
-        echo $this->salad = $salad . '</br>';
-        echo $this->drink = $drink . '</br>';
+        echo 'Hello!';
     }
 }
 
-$bistro = new Bistro('Bright salmon', 'Ardent shrimp', 'Lava Sauce', 'Caesar with chicken', 'fruit drink');
+class Developer extends Person
+{
+    public function work()
+    {
+        echo 'developer is working';
+    }
+}
+
+class Director extends Person
+{
+    public function work()
+    {
+        echo 'director is working';
+    }
+}
+
+class Manager extends Person
+{
+    public function work()
+    {
+        echo 'manager is working';
+    }
+}
+
+class Doctor extends Person
+{
+    public function work()
+    {
+        echo 'doctor is working';
+    }
+}
+
+class Teacher extends Person
+{
+    public function work()
+    {
+        echo 'Teacher is working';
+    }
+}
+
+class Engineer extends Person
+{
+    public function work()
+    {
+        echo 'Engineer is working';
+    }
+}
+
+class Lawyer extends Person
+{
+    public function work()
+    {
+        echo 'Lawyer is working';
+    }
+}
+
+class Programmer extends Person
+{
+    public function work()
+    {
+        echo 'Programmer is working';
+    }
+}
+
+class Artist extends Person
+{
+    public function work()
+    {
+        echo 'Artist is working';
+    }
+}
+
+class Nurse extends Person
+{
+    public function work()
+    {
+        echo 'Nurse is working';
+    }
+}
+
+class Chef extends Person
+{
+    public function work()
+    {
+        echo 'Chef is working';
+    }
+}
+
+class Architect extends Person
+{
+    public function work()
+    {
+        echo 'Architect is working';
+    }
+}
+
+class Writer extends Person
+{
+    public function work()
+    {
+        echo 'Writer is working';
+    }
+}
+
+$doctor = new Doctor('Artem', 34, 'doctor');
+$teacher = new Teacher('Alexey', 45, 'teacher');
+$engineer = new Engineer('Ilya', 28, 'engineer');
+
+echo $doctor->name . '</br>';
+echo $teacher->name . '</br>';
+echo $engineer->name . '</br>';
