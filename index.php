@@ -1,72 +1,35 @@
 <?php
 
-abstract class Person
+class Plant
 {
-    public string $name;
-    public int $age;
-    public string $job;
+    public $title;
+    private $color;
+    protected $season;
 
-    /**
-     * @param string $name
-     * @param string $age
-     * @param string $job
-     */
-    public function __construct(string $name, int $age, string $job)
+    public function __construct($title, $color, $season)
     {
-        $this->name = $name;
-        $this->age = $age;
-        $this->job = $job;
-    }
-
-    public function sayHello()
-    {
-        echo 'Hello!';
-    }
-}
-
-class Developer extends Person
-{
-    public int $timePerWeek;
-    
-    public function __construct(string $name, int $age, string $job, int $timePerWeek)
-    {
-        parent::__construct($name, $age, $job);
-        $this->timePerWeek = $timePerWeek;
-    }
-
-    public function work()
-    {
-        echo 'developer is working';
-    }
-}
-
-$developer = new Developer('Kenny', 20, 'developer', 20);
-
-echo $developer->timePerWeek;
-
-abstract class Building
-{
-    public string $name;
-    public int $floors;
-    public string $activity;
-    
-    public function __construct($name, $floors, $activity) {
-        $this->name = $name;
-        $this->floors = $floors;
-        $this->activity = $activity;
-    }
-}
-
-class Factory extends Building
-{
-    public string $color;
-    public function __construct(string $name, int $floors, string $activity, $color) {
+        $this->title = $title;
         $this->color = $color;
-        parent::__construct($name, $floors, $activity);
+        $this->season = $season;
+    }
+
+    private function f()
+    {
+        $this->color;
+    }
+
+}
+
+class Rosa extends Plant
+{
+    public function fn()
+    {
+        $this->season = '4';
     }
 }
 
-$factory = new Factory('The laying hen', 4, 'egg collection', 'red');
+$plant = new Plant('Tulip', 'pink', 'spring');
+$rosa = new Rosa('Rosa', 'Red', 'Spring');
 
-echo '</br>';
-echo $factory->activity . '</br>';
+echo $rosa->title;
+echo $plant->;
